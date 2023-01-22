@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet/master.css">
+</head>
+
+<body>
+    <main>
+        <section class="box">
+            <div class="card front">
+                <figure><img src="img/visa-svgrepo-com.svg" alt="" id="logo"></figure>
+                <div id="number">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="info">
+                    <div id="holder">
+                        <span>card holder</span>
+                        <span></span>
+                    </div>
+                    <div id="date">
+                        <span>expires</span>
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card back">
+                <div><span>cvv2</span></div>
+                <div>
+                    <span></span>
+                </div>
+                <figure><img src="img/visa-svgrepo-com.svg" alt="" id="logoback"></figure>
+            </div>
+            <section>
+                <span class="information">card Number</span>
+                <div>
+                    <input type="text" id="cardNumber0" maxlength="4" oninput="_cardnum(this)">
+                    <input type="text" id="cardNumber1" maxlength="4" oninput="_cardnum(this)">
+                    <input type="text" id="cardNumber2" maxlength="4" oninput="_cardnum(this)">
+                    <input type="text" id="cardNumber3" maxlength="4" oninput="_cardnum(this)">
+    
+                </div>
+                <span class="information">Card Holder</span>
+                <div class="cardHolder">
+                    <input type="text" id="cardHolder">
+                </div>
+                <div class="information">
+                    <span>expiration date</span>
+                    <span>cvv2</span>
+                </div>
+    
+                <div>
+                    <div>
+                        <select name="month" id="months">
+                            <option value="">month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select name="year" id="year">
+                            <option value="">year</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" maxlength="4" id="cvv2">
+                    </div>
+                </div>
+                <button>submit</button>
+            </section>
+           
+        </section>
+    </main>
+    <script>
+        document.getElementById('cardNumber0').oninput = () => {
+            document.getElementsByTagName('span')[0].innerText = document.getElementById('cardNumber0').value
+        }
+        document.getElementById('cardNumber1').oninput = () => {
+            document.getElementsByTagName('span')[1].innerText = document.getElementById('cardNumber1').value
+        }
+        document.getElementById('cardNumber2').oninput = () => {
+            document.getElementsByTagName('span')[2].innerText = document.getElementById('cardNumber2').value
+        }
+        document.getElementById('cardNumber3').oninput = () => {
+            document.getElementsByTagName('span')[3].innerText = document.getElementById('cardNumber3').value
+        }
+        document.getElementById('cardHolder').oninput = () => {
+            document.getElementsByTagName('span')[5].innerText = document.getElementById('cardHolder').value
+        }
+        document.getElementById('months').oninput = () => {
+            document.getElementsByTagName('span')[7].innerText = document.getElementById('months').value
+        }
+        document.getElementById('year').oninput = () => {
+            document.getElementsByTagName('span')[8].innerText = '/' + document.getElementById('year').value
+        }
+        document.getElementById('cvv2').onmouseenter = () => {
+            document.getElementsByClassName('front')[0].style.transform='translateY(-50%) perspective(1000px) rotateY(-180deg)'
+            document.getElementsByClassName('back')[0].style.transform='translateY(-50%) perspective(1000px) rotateY(0deg)'
+            // document.getElementsByTagName('span')[8].innerText = '/' + document.getElementById('year').value
+        }
+        document.getElementById('cvv2').onmouseout = () => {
+            document.getElementsByClassName('front')[0].style.transform='translateY(-50%) perspective(1000px) rotateY(0deg)'
+            document.getElementsByClassName('back')[0].style.transform='translateY(-50%) perspective(1000px) rotateY(180deg)'
+            // document.getElementsByTagName('span')[8].innerText = '/' + document.getElementById('year').value
+        }
+        document.getElementById('cvv2').oninput = () =>{
+            document.getElementsByTagName('span')[10].innerText =document.getElementById('cvv2').value
+
+        }
+    </script>
+</body>
+
+</html>

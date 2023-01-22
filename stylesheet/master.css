@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main,
+div,
+section,
+span,
+figure {
+    display: flex;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #f5f563, #acf78a, #6bf0b8, #42e4db, #5cd3ea);
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.box {
+    /* width: 35%; */
+    height: 75%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    justify-content: center;
+    top: 10%;
+    flex-wrap: wrap;
+
+}
+
+
+.card {
+    width: 81%;
+    height: 48%;
+    border-radius: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 99;
+    transition: .8s;
+    background-image: linear-gradient(to right, rgb(12, 48, 102), rgb(14, 69, 149), rgb(14, 69, 149));
+
+}
+
+.front {
+    backface-visibility: hidden;
+    position: absolute;
+    transform: translateY(-50%) perspective(1000px) rotateY(0deg);
+    /* z-index: 99; */
+
+
+}
+
+.back {
+    position: absolute;
+    overflow: hidden;
+    backface-visibility: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 90; */
+    transform: translateY(-50%) perspective(1000px) rotateY(180deg);
+}
+
+.back>div:nth-of-type(1) {
+    width: 100%;
+    height: 38%;
+    /* background-color: #acf78a; */
+    align-items: flex-end;
+}
+
+.back>div:nth-of-type(1)>span {
+    color: white;
+    width: 92%;
+    justify-content: flex-end;
+}
+
+.back>div:nth-of-type(2) {
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.back>div:nth-of-type(2) span {
+    background-color: white;
+    width: 88%;
+    height: 40px;
+    padding: 2%;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.back::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: rgb(8, 8, 8);
+    top: 10%;
+    left: 0;
+}
+
+.card>figure {
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+
+.box>section>div:nth-of-type(1),
+.cardHolder {
+    width: 88%;
+    justify-content: space-between;
+
+}
+
+label {
+    width: 100%;
+}
+
+input,
+select {
+    height: 40px;
+    outline: none;
+    box-shadow: inset 0px 0px 3px 1px rgba(121, 121, 121, 0.521);
+    border-radius: 5px;
+    border: .5px solid rgba(141, 141, 141, 0.829);
+    padding: 2%;
+}
+
+.box>section {
+    flex-wrap: wrap;
+
+    margin-top: 35%;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.box>section>div:nth-of-type(1) input {
+    width: 22%;
+}
+
+.box>section>div:nth-of-type(2) input {
+    width: 100%;
+}
+
+.box>section>div:nth-of-type(3),
+.box>section>div:nth-of-type(4) {
+    justify-content: space-between;
+    width: 88%;
+}
+
+.box>section>div:nth-of-type(4)>div:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+select {
+    margin-right: 5px;
+}
+
+#cvv2 {
+    width: 55%;
+
+}
+
+.box>section>div:nth-of-type(3)>div:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+#logo {
+    width: 100px;
+}
+
+#logoback {
+    width: 70px;
+}
+
+.info {
+    width: 85%;
+    justify-content: space-between;
+}
+
+#number {
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 85%;
+}
+
+#holder {
+    color: white;
+    justify-content: flex-start;
+    width: 70%;
+    flex-direction: column;
+}
+
+#date {
+    width: 20%;
+    flex-direction: column;
+    color: white;
+}
+
+.information {
+    width: 88%;
+    color: rgb(68, 68, 68);
+}
+
+.information>span:nth-of-type(2) {
+    width: 22%;
+}
+
+button {
+    width: 88%;
+    border: none;
+    background-color: #5cd3ea;
+    border-radius: 5px;
+    height: 40px;
+    margin: 2% 0;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        width: 70%;
+    }
+    .box>section{
+        width: 85%;
+        height: 58%;
+    }
+}
+@media screen and (min-width: 769px) {
+    .box {
+        width: 50%;
+        /* background-color: brown; */
+    }
+    .box>section{
+        width: 85%;
+        height: 60%;
+    }
+}
+@media screen and (min-width: 992px) {
+    .box {
+        width: 35%;
+        /* background-color: brown; */
+    }
+    .box>section{
+        width: 90%;
+        height: 62%;
+    }
+}
